@@ -1,0 +1,39 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>IncluirProduto</title>
+</head>
+<body>
+    <div>
+        <h1>Cadastro de Alunos (simulação)</h1>
+        @using (Html.BeginForm())
+        {
+            @Html.Label("Código")
+
+            <br />
+            @Html.TextBox("id")
+
+            <br />
+            @Html.Label("Nome")
+
+            <br />
+            @Html.TextBox("nome")
+
+            <br />
+            @Html.Label("CPF")
+
+            <br />
+            @Html.TextBox("cpf")
+
+            <br />
+
+            <button type="button" class="btn btn-success">Successo</button>
+
+            <button type="button" class="btn btn-danger">Excluir</button>
+           
+        }
+    </div>
+</body>
+</html>
