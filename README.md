@@ -16,11 +16,13 @@
  <hr/>
  <h5>
    
-   -------CRIAR O BD -------
+ <H3>-------CRIAR O BD -------</H3>  
 create database Desafio;
 use Desafio;
- 
-  ------CRIAR A TABELA------
+
+
+  <hr/>
+  <H3>------CRIAR A TABELA------</H3>
 
 create table Aluno (
 	idaluno int primary key identity(1,1),
@@ -31,13 +33,6 @@ create table Aluno (
 
 );
  
-insert into Aluno (idade,matricula,nome) values
-(25,'100A','Ana');
-insert into Aluno (idade,matricula,nome) values
-(28,'102B','Yuri');
- 
-select * from Aluno;
-
 
 CREATE TABLE tblCurso
 (
@@ -52,8 +47,14 @@ Constraint FK_tblCurso_tblAluno
 Foreign Key(idAluno)
 References Aluno(idAluno),
 );
-
--------INSERIR OS DADOS------
+ <hr/>
+ 
+ <H3>-------INSERIR OS DADOS------</H3>
+ 
+insert into Aluno (idade,matricula,nome) values
+(25,'100A','Ana');
+insert into Aluno (idade,matricula,nome) values
+(28,'102B','Yuri');
 
 
 insert into tblCurso (nome,idAluno) values
@@ -61,18 +62,23 @@ insert into tblCurso (nome,idAluno) values
 
 insert into tblCurso (nome,idAluno) values
 ('Biol',2);
+ <hr/>
+ 
+ <H3>-------- SELECIONAR DADOS -----</H3>
 
--------- SELECIONAR DADOS -----
 
 select * from Aluno;
 select * from tblCurso;
+ <hr/>
 
-------INNER JOIN----------
+ <H3>------INNER JOIN---------</H3>
+
 
 SELECT tblCurso.idCurso,tblCurso.nome, Aluno.matricula
 FROM tblCurso
 INNER JOIN Aluno ON tblCurso.idCurso=Aluno.idaluno;
 
+ <hr/>
 </h5>
 <hr/>
 
