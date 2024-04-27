@@ -16,11 +16,11 @@
  <hr/>
  <h5>
    
-   _______--CRIAR O BD --______
+   -------CRIAR O BD -------
 create database Desafio;
 use Desafio;
  
-___--CRIAR A TABELA-------_________
+  ------CRIAR A TABELA------
 
 create table Aluno (
 	idaluno int primary key identity(1,1),
@@ -53,7 +53,7 @@ Foreign Key(idAluno)
 References Aluno(idAluno),
 );
 
-____--INSERIR OS DADOS------______
+-------INSERIR OS DADOS------
 
 
 insert into tblCurso (nome,idAluno) values
@@ -62,12 +62,12 @@ insert into tblCurso (nome,idAluno) values
 insert into tblCurso (nome,idAluno) values
 ('Biol',2);
 
-______-- SELECIONAR DADOS ------______
+-------- SELECIONAR DADOS -----
 
 select * from Aluno;
 select * from tblCurso;
 
-_______--INNER JOIN----------_____
+------INNER JOIN----------
 
 SELECT tblCurso.idCurso,tblCurso.nome, Aluno.matricula
 FROM tblCurso
