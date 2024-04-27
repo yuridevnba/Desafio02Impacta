@@ -19,9 +19,9 @@
    --criar o bd--
 create database Desafio;
 use Desafio;
- 
---criar tabela--
------------------
+ -----------------
+--criar tabela---------
+
 create table Aluno (
 	idaluno int primary key identity(1,1),
 	idade int check (idade>=18),
@@ -52,9 +52,9 @@ Constraint FK_tblCurso_tblAluno
 Foreign Key(idAluno)
 References Aluno(idAluno),
 );
-
---Inserir Dados--
 -----------------
+--Inserir Dados------
+
 
 insert into tblCurso (nome,idAluno) values
 ('Biol',1);
@@ -62,16 +62,17 @@ insert into tblCurso (nome,idAluno) values
 insert into tblCurso (nome,idAluno) values
 ('Biol',2);
 
--- Selecionar Dados--
----------------------
+-- Selecionar Dados------
+
 select * from Aluno;
 select * from tblCurso;
-
---Inner Join--
 ---------------------
+--Inner Join-------------
+
 SELECT tblCurso.idCurso,tblCurso.nome, Aluno.matricula
 FROM tblCurso
 INNER JOIN Aluno ON tblCurso.idCurso=Aluno.idaluno;
+---------------------
 </h5>
 <hr/>
 
