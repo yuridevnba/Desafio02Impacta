@@ -18,6 +18,7 @@
    
  <H3>-------CRIAR O BD -------</H3>  
 create database Desafio;
+
 use Desafio;
 
 
@@ -26,8 +27,11 @@ use Desafio;
 
 create table Aluno (
 	idaluno int primary key identity(1,1),
+ 
 	idade int check (idade>=18),
+ 
 	matricula varchar(20) unique,
+ 
 	nome varchar(30)
 	
 
@@ -37,14 +41,19 @@ create table Aluno (
 CREATE TABLE tblCurso
 (
 idCurso int identity
+
 Constraint PK_tblCurso_idCurso
+
 Primary Key(idCurso),
 
 nome varchar(30),
+
 idAluno int not null 
 
 Constraint FK_tblCurso_tblAluno
+
 Foreign Key(idAluno)
+
 References Aluno(idAluno),
 );
  <hr/>
@@ -53,6 +62,7 @@ References Aluno(idAluno),
  
 insert into Aluno (idade,matricula,nome) values
 (25,'100A','Ana');
+
 insert into Aluno (idade,matricula,nome) values
 (28,'102B','Yuri');
 
@@ -68,6 +78,7 @@ insert into tblCurso (nome,idAluno) values
 
 
 select * from Aluno;
+
 select * from tblCurso;
  <hr/>
 
@@ -75,7 +86,9 @@ select * from tblCurso;
 
 
 SELECT tblCurso.idCurso,tblCurso.nome, Aluno.matricula
+
 FROM tblCurso
+
 INNER JOIN Aluno ON tblCurso.idCurso=Aluno.idaluno;
 
  <hr/>
